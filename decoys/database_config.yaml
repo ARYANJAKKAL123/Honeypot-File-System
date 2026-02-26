@@ -2,21 +2,21 @@
 # PRODUCTION SETTINGS - DO NOT MODIFY
 
 database:
-  host: 49.21.128.38
-  port: 5270
-  username: martinnelson
-  password: kJ59bV+eH**13dQw
-  database_name: represent_production
+  host: 222.15.88.113
+  port: 9447
+  username: russellralph
+  password: *7g1AJGudmnnSK(%
+  database_name: machine_production
 
 api:
-  endpoint: https://harris.com/api/v1
-  api_key: bdbfce2e-c71b-4a79-b0a8-d1bfc1ef9afb
-  secret_key: 9d73ec4539c58f05f0074218d1d10decc147054ab8c90d7676ced9e6c11f131d
+  endpoint: https://smith.com/api/v1
+  api_key: 530eb84b-d17d-4e50-be9d-baff61c41ec3
+  secret_key: 3c24e0d8bd031f59344dac3277ab6939a2d6ef71c45563f08253ef5212f28720
   
 security:
-  encryption_key: 6523d6d3b321c4da8e2386c41b3ab221b3478598c7eb3dffdd34a5f912ddc856
-  jwt_secret: 81440647-2cc8-4e2f-b005-b38fbc2e4e92
+  encryption_key: b14ecd162729d8eac753c7b3c6ebcece0c2c30f4680d760767f718a521426b34
+  jwt_secret: 37ca6a83-a37a-46d3-beed-f245be5db496
   
 admin:
-  email: joseph25@example.net
-  backup_email: kellycamacho@example.org
+  email: romerosarah@example.net
+  backup_email: michellehawkins@example.net

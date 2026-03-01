@@ -1,14 +1,14 @@
 # Credentials File
 # DO NOT SHARE - CONFIDENTIAL
 
-Username: singhkevin
-Password: R56ZlzZH^*(V
+Username: woodardmichael
+Password: C!0XHcvodGbd
 
-Admin Username: emily23
-Admin Password: YX79ZL)IH)a75Xs#
+Admin Username: mcoleman
+Admin Password: e_BSy8vV&@0dKULx
 
-Database User: kwood
-Database Password: S$2sxrGU)kcOvQayl$&h
+Database User: mgood
+Database Password: Fn56VprEJ!T_D59Bpynk
 
-API Key: 45143714-3681-4651-8102-b0d70f443499
-Secret Token: 63cc58a75cdcef5eeba641377576a7714537ab12bc164c420a030cbe34a26fc8
+API Key: 661188de-d2eb-4f3a-a559-1a9497f43792
+Secret Token: 0377a23631743e47f4a36714091a7ce8b7f23c25d61efd79ffe80c8e752be76e

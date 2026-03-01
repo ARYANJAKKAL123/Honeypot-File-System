@@ -2,6 +2,7 @@
 from domain.application.decoy_service import DecoyService
 from domain.infrastructure.file_decoy_generator import FileDecoyGenerator
 from .logger import EventLogger
+from .attack_tracker import AttackTracker
 import os
 
 class DecoyManager:
@@ -23,6 +24,9 @@ class DecoyManager:
         # Create decoy service (Application layer)
         self.decoy_service = DecoyService(generator)
         
+        # Create attack tracker
+        self.attack_tracker = AttackTracker()
+        
         # Set up decoy deployment path
         self.decoy_base_path = decoy_base_path
         
@@ -36,6 +40,9 @@ class DecoyManager:
         
         # Track if decoys have been deployed (prevent duplicate deployments)
         self.decoys_deployed = False
+        
+        # Track the path that triggered deployment
+        self.trigger_path = None
     
     def deploy_for_threat(self, threat_score, threat_level, trigger_path):
         """
@@ -56,6 +63,9 @@ class DecoyManager:
         # Prevent duplicate deployments
         if self.decoys_deployed:
             return None
+        
+        # Store trigger path for attack tracking
+        self.trigger_path = trigger_path
         
         # Deploy decoys using DecoyService
         self.logger.log_warning(
@@ -91,6 +101,15 @@ class DecoyManager:
         """
         # Check if this file is a deployed decoy
         if self.decoy_service.is_decoy_file(file_path):
+            # Record the attack with detailed information
+            attack_info = self.attack_tracker.record_attack(
+                decoy_path=file_path,
+                event_type=event_type,
+                threat_level=threat_level,
+                threat_score=threat_score,
+                trigger_path=self.trigger_path
+            )
+            
             self.logger.log_error(
                 f"🚨 ATTACKER CAUGHT! Decoy accessed: {file_path} | "
                 f"Event: {event_type} | Threat: {threat_level} ({threat_score})"
@@ -114,3 +133,12 @@ class DecoyManager:
             'decoys': deployed_decoys,
             'base_path': self.decoy_base_path
         }
+    
+    def get_attack_statistics(self):
+        """
+        Get detailed attack statistics
+        
+        Returns:
+            Dictionary with attack information
+        """
+        return self.attack_tracker.get_attack_summary()

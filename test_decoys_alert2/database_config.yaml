@@ -1,0 +1,22 @@
+# Database Configuration
+# PRODUCTION SETTINGS - DO NOT MODIFY
+
+database:
+  host: 72.134.107.87
+  port: 6132
+  username: walshlori
+  password: Su$79Dgto#$j4TeA
+  database_name: present_production
+
+api:
+  endpoint: https://nolan-weber.com/api/v1
+  api_key: 444a85a9-6f6c-4cc6-a692-c53d741e2190
+  secret_key: a129430b11b953d0b58b1480063371760d2b516145c135848b85d0e7e260d955
+  
+security:
+  encryption_key: 299445470dd058e21a25e7b72800d91eb2c1c9295e2d086d00dd4f0a1910615e
+  jwt_secret: 50b0de1e-d2a7-464d-bb0f-d4fc97077fc3
+  
+admin:
+  email: morgandaniel@example.com
+  backup_email: fstevenson@example.net

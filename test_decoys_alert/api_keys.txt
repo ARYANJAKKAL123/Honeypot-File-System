@@ -1,0 +1,14 @@
+# Credentials File
+# DO NOT SHARE - CONFIDENTIAL
+
+Username: alexander36
+Password: &fNk_3wSP2K&
+
+Admin Username: knightmisty
+Admin Password: Upd@cNqujc)F8LJU
+
+Database User: dianapeters
+Database Password: Qc_FS@GGV%HOxHyitM35
+
+API Key: 1fc4b6d5-ccbc-4810-b5f4-a010e5aa9e8c
+Secret Token: e765cc372db7431a9485253573cf3c02428337827927e07ac3ddedbbd92c2d4c

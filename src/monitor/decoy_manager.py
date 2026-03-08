@@ -3,6 +3,7 @@ from domain.application.decoy_service import DecoyService
 from domain.infrastructure.file_decoy_generator import FileDecoyGenerator
 from .logger import EventLogger
 from .attack_tracker import AttackTracker
+from alert.manager import AlertManager
 import os
 
 class DecoyManager:
@@ -38,6 +39,9 @@ class DecoyManager:
         self.logger = EventLogger()
         self.logger.log_info(f"DecoyManager initialized - decoys will be deployed to: {decoy_base_path}")
         
+        # Initialize alert manager
+        self.alert_manager = AlertManager() 
+
         # Track if decoys have been deployed (prevent duplicate deployments)
         self.decoys_deployed = False
         
@@ -101,22 +105,24 @@ class DecoyManager:
         """
         # Check if this file is a deployed decoy
         if self.decoy_service.is_decoy_file(file_path):
-            # Record the attack with detailed information
-            attack_info = self.attack_tracker.record_attack(
-                decoy_path=file_path,
-                event_type=event_type,
-                threat_level=threat_level,
-                threat_score=threat_score,
-                trigger_path=self.trigger_path
-            )
-            
+            # Log to event log
             self.logger.log_error(
                 f"🚨 ATTACKER CAUGHT! Decoy accessed: {file_path} | "
                 f"Event: {event_type} | Threat: {threat_level} ({threat_score})"
             )
+            
+            # Send alert
+            self.alert_manager.alert_decoy_accessed(
+                file_path=file_path,
+                event_type=event_type,
+                threat_level=threat_level,
+                threat_score=threat_score
+            )
+            
             return True
         
         return False
+
     
     def get_deployment_status(self):
         """

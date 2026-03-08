@@ -1,0 +1,22 @@
+# Database Configuration
+# PRODUCTION SETTINGS - DO NOT MODIFY
+
+database:
+  host: 28.240.123.68
+  port: 8699
+  username: jaclyn24
+  password: 0UtVgQG+^_SEbrrh
+  database_name: around_production
+
+api:
+  endpoint: https://martinez.info/api/v1
+  api_key: 23d62d33-a004-4318-af74-67a77460706f
+  secret_key: d0b90a63d467b442dac21453e3e8cd0f47e8185c1cb689746669bd5dd85e3384
+  
+security:
+  encryption_key: 2d573cefdf79a28bd6ebbc0cf2c080b891cc84b8f6687a58b939a1d58f48b100
+  jwt_secret: a14708e3-c03c-430d-8ba7-72f55cc47e8c
+  
+admin:
+  email: nathancastillo@example.com
+  backup_email: joycevaughn@example.org

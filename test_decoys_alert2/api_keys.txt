@@ -1,14 +1,14 @@
 # Credentials File
 # DO NOT SHARE - CONFIDENTIAL
 
-Username: marycummings
-Password: +09KTk$hNVQY
+Username: xhayes
+Password: ^QE2Sogl*LB)
 
-Admin Username: charles26
-Admin Password: iGxxf7G*L_)7FGEt
+Admin Username: morrisdavid
+Admin Password: &ni(kMB4gcX4_1Lr
 
-Database User: jake08
-Database Password: P$eMwqjz(wuzGpLqox4e
+Database User: clarkbrandi
+Database Password: sdu(I0*__fb$hy6KFuh3
 
-API Key: fc15a3b1-0636-4947-bbf1-174baf755020
-Secret Token: fea1bad40a97587aea70a8d113bc6dd054d1fbfb3a9ebde60211a60e683e2aeb
+API Key: 4d1d6850-3595-4569-9bd7-a35b7ebf7abb
+Secret Token: 01b1f1605508ee806856eb1fbb9e7e8608eb053797cfad008682a2792c5c2b13

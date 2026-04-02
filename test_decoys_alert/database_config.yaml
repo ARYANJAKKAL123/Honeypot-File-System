@@ -2,21 +2,21 @@
 # PRODUCTION SETTINGS - DO NOT MODIFY
 
 database:
-  host: 28.240.123.68
-  port: 8699
-  username: jaclyn24
-  password: 0UtVgQG+^_SEbrrh
-  database_name: around_production
+  host: 42.48.209.119
+  port: 8066
+  username: cdelacruz
+  password: y4cY!vt3+aptP5f@
+  database_name: good_production
 
 api:
-  endpoint: https://martinez.info/api/v1
-  api_key: 23d62d33-a004-4318-af74-67a77460706f
-  secret_key: d0b90a63d467b442dac21453e3e8cd0f47e8185c1cb689746669bd5dd85e3384
+  endpoint: https://johnson-schultz.biz/api/v1
+  api_key: 8448217e-760d-41d2-bc54-79070f965549
+  secret_key: b6688f6fd7d4620404cb21be3e3a00286d767a5f0f78e0f7f97e1824b14a34dd
   
 security:
-  encryption_key: 2d573cefdf79a28bd6ebbc0cf2c080b891cc84b8f6687a58b939a1d58f48b100
-  jwt_secret: a14708e3-c03c-430d-8ba7-72f55cc47e8c
+  encryption_key: 14bfe7378974aaa2c93b7cd8e1be1762af1d4b7143d3ea660d8d131be0f76cbc
+  jwt_secret: 22a7e51c-c3b3-4519-b6f8-5b6b503a61b9
   
 admin:
-  email: nathancastillo@example.com
-  backup_email: joycevaughn@example.org
+  email: rchapman@example.com
+  backup_email: ithomas@example.com

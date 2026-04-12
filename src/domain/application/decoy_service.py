@@ -52,14 +52,19 @@ class DecoyService:
     def is_decoy_file(self, file_path: str) -> bool:
         """
         Check if a file path is a deployed decoy
-        
+
         Args:
             file_path: Path to check
-            
+
         Returns:
             True if file is a decoy, False otherwise
         """
-        return any(decoy.file_path == file_path for decoy in self.deployed_decoys)
+        # Normalize slashes for cross-platform comparison
+        normalized = file_path.replace('\\', '/')
+        return any(
+            decoy.file_path.replace('\\', '/') == normalized
+            for decoy in self.deployed_decoys
+        )
     
     def get_deployed_decoys(self) -> List[Decoy]:
         """

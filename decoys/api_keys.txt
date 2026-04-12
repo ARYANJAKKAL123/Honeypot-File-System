@@ -1,14 +1,14 @@
 # Credentials File
 # DO NOT SHARE - CONFIDENTIAL
 
-Username: darin68
-Password: $84JxG*7q(N$
+Username: qkhan
+Password: qx8*NXxx)b4G
 
-Admin Username: yoliver
-Admin Password: $TUnDrsD03Eu(nL)
+Admin Username: ymurphy
+Admin Password: V4JI)xyB%qOAr0VS
 
-Database User: leemonica
-Database Password: BVMh@AG$%5QNwl$P^BUh
+Database User: blanchardrichard
+Database Password: #1COlT958)*mXeM292J4
 
-API Key: ae82e8cd-f61f-4542-9258-d0c53b68c279
-Secret Token: a4be59736a576d3ed63aaea37b910c51193267d81bba17eaca5708bdba24a9e9
+API Key: 5e5f7c13-d772-4404-891e-2ff6ca8001c3
+Secret Token: e6c469785d17130af294ebdcee41052575f630a5d3945234fece17fa7e998c7e

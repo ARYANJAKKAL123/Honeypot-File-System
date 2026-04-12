@@ -110,7 +110,16 @@ class DecoyManager:
                 f"🚨 ATTACKER CAUGHT! Decoy accessed: {file_path} | "
                 f"Event: {event_type} | Threat: {threat_level} ({threat_score})"
             )
-            
+
+            # Record attack in tracker
+            self.attack_tracker.record_attack(
+                decoy_path=file_path,
+                event_type=event_type,
+                threat_level=threat_level,
+                threat_score=threat_score,
+                trigger_path=self.trigger_path
+            )
+
             # Send alert
             self.alert_manager.alert_decoy_accessed(
                 file_path=file_path,
@@ -118,9 +127,9 @@ class DecoyManager:
                 threat_level=threat_level,
                 threat_score=threat_score
             )
-            
+
             return True
-        
+
         return False
 
     

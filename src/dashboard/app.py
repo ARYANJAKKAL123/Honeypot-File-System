@@ -29,8 +29,10 @@ state = {
     'decoy_count': 0,
     'total_alerts': 0,
     'total_attacks': 0,
-    'events': [],       # last 50 file events
-    'alerts': [],       # last 20 alerts
+    'events': [],
+    'alerts': [],
+    'decoy_files': [],
+    'attack_log': [],
 }
 
 MAX_EVENTS = 50
@@ -62,6 +64,15 @@ class DashboardFileMonitor(FileMonitor):
         state['threat_level'] = level
         state['decoys_deployed'] = status['deployed']
         state['decoy_count'] = status['count']
+        state['decoy_files'] = [
+            {
+                'name': os.path.basename(d.file_path),
+                'path': d.file_path,
+                'type': d.decoy_type,
+                'created': d.created_at.strftime('%H:%M:%S') if hasattr(d.created_at, 'strftime') else str(d.created_at),
+            }
+            for d in status['decoys']
+        ]
 
         # Add to events list (keep last 50)
         state['events'].insert(0, event)
@@ -82,6 +93,17 @@ class DashboardFileMonitor(FileMonitor):
         # Check attack stats
         attack_stats = self.decoy_manager.get_attack_statistics()
         state['total_attacks'] = attack_stats.get('total_attacks', 0)
+        state['attack_log'] = [
+            {
+                'id': a.get('attack_id', ''),
+                'time': a.get('timestamp', ''),
+                'decoy': os.path.basename(a.get('decoy_path', '')),
+                'action': a.get('event_type', ''),
+                'level': a.get('threat_level', ''),
+                'score': a.get('threat_score', 0),
+            }
+            for a in attack_stats.get('attacks', [])
+        ][::-1]  # newest first
 
         # Push to all connected dashboard clients
         socketio.emit('update', state)
@@ -109,6 +131,13 @@ def start_monitor():
     for d in watch_dirs:
         observer.schedule(monitor_handler, path=d, recursive=True)
 
+    # Also monitor the decoys folder to detect attacker access
+    decoys_dir = 'decoys'
+    if not os.path.exists(decoys_dir):
+        os.makedirs(decoys_dir)
+    observer.schedule(monitor_handler, path=decoys_dir, recursive=True)
+    print(f"Also monitoring decoys folder: {decoys_dir}")
+
     observer.start()
     print(f"Monitor started on: {watch_dirs}")
 
@@ -135,6 +164,34 @@ def api_events():
 def api_alerts():
     """REST endpoint - recent alerts."""
     return jsonify(state['alerts'])
+
+
+@app.route('/api/reset', methods=['POST'])
+def api_reset():
+    """Reset the honeypot state for a fresh demo."""
+    global monitor_handler
+    state['threat_score'] = 0
+    state['threat_level'] = 'Normal'
+    state['decoys_deployed'] = False
+    state['decoy_count'] = 0
+    state['total_alerts'] = 0
+    state['total_attacks'] = 0
+    state['events'] = []
+    state['alerts'] = []
+    state['decoy_files'] = []
+    state['attack_log'] = []
+
+    # Reset the monitor components
+    if monitor_handler:
+        monitor_handler.threat_detector.events = []
+        monitor_handler.threat_detector.threat_score = 0
+        monitor_handler.decoy_manager.decoys_deployed = False
+        monitor_handler.decoy_manager.decoy_service.deployed_decoys = []
+        monitor_handler.decoy_manager.attack_tracker.attacks = []
+        monitor_handler.decoy_manager.alert_manager.alerts = []
+
+    socketio.emit('update', state)
+    return jsonify({'status': 'reset', 'message': 'System reset successfully'})
 
 
 @socketio.on('connect')

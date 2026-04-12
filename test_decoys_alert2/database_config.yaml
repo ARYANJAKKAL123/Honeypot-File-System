@@ -2,21 +2,21 @@
 # PRODUCTION SETTINGS - DO NOT MODIFY
 
 database:
-  host: 174.113.34.85
-  port: 4453
-  username: kathleen85
-  password: (ojDr8Kf7AG3bW_O
-  database_name: garden_production
+  host: 112.55.231.140
+  port: 7248
+  username: riosraymond
+  password: @gL49Po0IPOhlYg7
+  database_name: thought_production
 
 api:
-  endpoint: https://sanders.org/api/v1
-  api_key: 6cc95e2d-bac9-4d33-81d1-def27fb9f5a5
-  secret_key: da6e8468878e5b1d6adfdc28987355b6280ef14be894fd203cd56ac2a84ce2b8
+  endpoint: https://sandoval-ortega.info/api/v1
+  api_key: cee5e456-67eb-485b-902d-1fe7ac501f2f
+  secret_key: b84a142a3aae68caec05561d222689e504ec29be9d380b8af5e5264214abfd4e
   
 security:
-  encryption_key: 9d3c3251910dcb3170d736ba1c91da8c913708d2b394122e311b830ebf5fec77
-  jwt_secret: 1807270e-b920-4761-8916-ea26f8496960
+  encryption_key: e43567a781285a7045e5e7362d5489f54a187385666eb830f0b6957768055807
+  jwt_secret: 60dbc246-d139-4db4-8457-aa92ade242be
   
 admin:
-  email: rodneyhoward@example.net
-  backup_email: hannah68@example.com
+  email: robertwood@example.org
+  backup_email: zmartinez@example.org

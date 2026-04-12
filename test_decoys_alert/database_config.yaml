@@ -2,21 +2,21 @@
 # PRODUCTION SETTINGS - DO NOT MODIFY
 
 database:
-  host: 42.48.209.119
-  port: 8066
-  username: cdelacruz
-  password: y4cY!vt3+aptP5f@
-  database_name: good_production
+  host: 208.130.84.43
+  port: 3951
+  username: qlong
+  password: v%xCK*x++H5Rvb$t
+  database_name: information_production
 
 api:
-  endpoint: https://johnson-schultz.biz/api/v1
-  api_key: 8448217e-760d-41d2-bc54-79070f965549
-  secret_key: b6688f6fd7d4620404cb21be3e3a00286d767a5f0f78e0f7f97e1824b14a34dd
+  endpoint: https://curtis.info/api/v1
+  api_key: 2ae9a6de-51a9-4e10-acc5-42f9184a6c74
+  secret_key: 9f2c27b3e7a2af038fa2352bee8b29c8e61a81148ab2801cafb65d07344eda90
   
 security:
-  encryption_key: 14bfe7378974aaa2c93b7cd8e1be1762af1d4b7143d3ea660d8d131be0f76cbc
-  jwt_secret: 22a7e51c-c3b3-4519-b6f8-5b6b503a61b9
+  encryption_key: 067e95717f9970fb94fced7e8edc7aef2378719cb9f1f5ce29397c50223e199e
+  jwt_secret: 97cea80f-48a4-414d-af9c-0dddccfc49b4
   
 admin:
-  email: rchapman@example.com
-  backup_email: ithomas@example.com
+  email: bjoyce@example.net
+  backup_email: riverawilliam@example.org

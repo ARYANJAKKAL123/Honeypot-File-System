@@ -2,21 +2,21 @@
 # PRODUCTION SETTINGS - DO NOT MODIFY
 
 database:
-  host: 128.117.216.104
-  port: 7184
-  username: cookchristian
-  password: 366%jnwn+T*2Y1hb
-  database_name: poor_production
+  host: 77.181.197.20
+  port: 4135
+  username: vicki69
+  password: t2w6B0fT^x6iCZT#
+  database_name: pass_production
 
 api:
-  endpoint: https://ochoa.biz/api/v1
-  api_key: 90770852-e46a-4184-a0c0-b73cf92389ef
-  secret_key: c31024cd2927243aacbfd7acf940de0f894126729804c3893c99e6c774782e80
+  endpoint: https://green.com/api/v1
+  api_key: 3e7a0a2e-d4f5-4e1b-a42a-99826e1a2070
+  secret_key: e82905f0798990204c76c5ace62ad174de0d3bf61634fc6c33d5acaf0558aa3d
   
 security:
-  encryption_key: 8c87c0d1be35921e44477e0c4f1a76725b2645d6e823298066657fb0a3205b65
-  jwt_secret: c2a50350-e6cb-4ad2-96af-a0b5c3447bd3
+  encryption_key: a0e380f125c0d07ef7ca776df319a125fa8772b34699fc225af002f049905ba4
+  jwt_secret: b9f8d073-936c-44f1-87e7-03e5eccf134b
   
 admin:
-  email: gcarpenter@example.com
-  backup_email: tuckerpeter@example.net
+  email: melissa37@example.org
+  backup_email: holly53@example.org

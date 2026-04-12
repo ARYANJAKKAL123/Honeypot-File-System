@@ -2,21 +2,21 @@
 # PRODUCTION SETTINGS - DO NOT MODIFY
 
 database:
-  host: 222.15.88.113
-  port: 9447
-  username: russellralph
-  password: *7g1AJGudmnnSK(%
-  database_name: machine_production
+  host: 128.117.216.104
+  port: 7184
+  username: cookchristian
+  password: 366%jnwn+T*2Y1hb
+  database_name: poor_production
 
 api:
-  endpoint: https://smith.com/api/v1
-  api_key: 530eb84b-d17d-4e50-be9d-baff61c41ec3
-  secret_key: 3c24e0d8bd031f59344dac3277ab6939a2d6ef71c45563f08253ef5212f28720
+  endpoint: https://ochoa.biz/api/v1
+  api_key: 90770852-e46a-4184-a0c0-b73cf92389ef
+  secret_key: c31024cd2927243aacbfd7acf940de0f894126729804c3893c99e6c774782e80
   
 security:
-  encryption_key: b14ecd162729d8eac753c7b3c6ebcece0c2c30f4680d760767f718a521426b34
-  jwt_secret: 37ca6a83-a37a-46d3-beed-f245be5db496
+  encryption_key: 8c87c0d1be35921e44477e0c4f1a76725b2645d6e823298066657fb0a3205b65
+  jwt_secret: c2a50350-e6cb-4ad2-96af-a0b5c3447bd3
   
 admin:
-  email: romerosarah@example.net
-  backup_email: michellehawkins@example.net
+  email: gcarpenter@example.com
+  backup_email: tuckerpeter@example.net

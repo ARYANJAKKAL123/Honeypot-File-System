@@ -4,7 +4,7 @@ agent:
 
 monitoring:
   watch_directories:
-    - "/path/to/monitor"  # Change this to your test folder
+    - "test_monitor"  # Change this to your test folder
   
 threat_detection:
   threshold: 50  # Deploy decoys when score > 50
